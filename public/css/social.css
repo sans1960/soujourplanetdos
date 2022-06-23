@@ -1,0 +1,9 @@
+.social-share{
+    font-size: 30px;
+}
+
+.social-share ul li{
+    list-style-type: none;
+    display: inline-block;
+    margin-left: 15px;
+}
