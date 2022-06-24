@@ -4,8 +4,8 @@
 
 <div class="container mx-auto border-b-4 border-b-gray-400">
 
-    <div class="flex flex-row flex-wrap justify-around mt-5 text-xs md:text-sm lg:text-base font-patua-one">
-        <a href="" class="m-2 text-2xl font-bold">{{ $category->name }} of {{ $destination->name }}</a>
+    <div class="flex flex-row flex-wrap justify-around mt-5  font-patua-one">
+        <a href="" class="m-2 text-xl font-bold">{{ $category->name }} of {{ $destination->name }}</a>
 
 
 

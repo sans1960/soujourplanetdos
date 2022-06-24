@@ -4,9 +4,9 @@
 
 <div class="container mx-auto border-b-4 border-b-gray-400">
 
-    <div class="flex flex-row flex-wrap justify-around mt-5 text-xs md:text-sm lg:text-base font-open-sans ">
+    <div class="flex flex-row flex-wrap justify-around mt-5  font-open-sans ">
 
-        <a href="" class="m-2 text-2xl font-bold">{{ $category->name }} of {{ $country->name }}</a>
+        <a href="" class="m-2 text-xl font-bold">{{ $category->name }} of {{ $country->name }}</a>
 
 
 

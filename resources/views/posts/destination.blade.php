@@ -4,7 +4,7 @@
 
 <div class="container mx-auto "></div>
     <div>
-        <h1 class="mt-5 text-2xl text-center font-patua-one">{{ $destination->name }}</h1>
+        <h1 class="mt-5 text-xl text-center font-patua-one">{{ $destination->name }}</h1>
     </div>
 
 

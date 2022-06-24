@@ -39,7 +39,7 @@
                  <a href="https://sojournplanet.com/images-copyright" class="text-gray-300 underline hover:text-white" target="_blank">Images Copyright</a>
             </div>
             <a target="_blank" href="https://www.facebook.com/sojournplanet" class="mt-3 md:mt-0">
-              <img src="{{ asset('img/facebook.png') }}" width="40" alt="">
+              <img src="{{ asset('img/noufacebook.png') }}" class="invert" width="40" alt="">
             </a>
         </div>
 

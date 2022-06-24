@@ -3,17 +3,17 @@
 
 <div class="container mx-auto border-b-4 border-b-gray-400">
     <div>
-        <h1 class="mt-5 text-center font-patua-one text-2xl">{{ $category->name }}</h1>
+        <h1 class="mt-5 text-center font-patua-one text-xl">{{ $category->name }}</h1>
     </div>
 
 
 </div>
 
 <div class="container mx-auto border-b-4 border-b-gray-400">
-    <div class="flex flex-row flex-wrap justify-around mt-5 text-xs md:text-sm lg:text-base font-open-sans ">
+    <div class="flex flex-row flex-wrap justify-around mt-5  font-open-sans ">
 
         @foreach ($categories as $category)
-        <a href="{{ route('posts.categories',$category) }}" class="m-2 hover:font-bold">{{ $category->name }}</a>
+        <a href="{{ route('posts.categories',$category) }}" class="text-xl m-2 hover:font-bold">{{ $category->name }}</a>
         @endforeach
 
 

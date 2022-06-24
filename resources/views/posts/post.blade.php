@@ -21,7 +21,7 @@
        {!! $post->body !!}
    </div>
    <div class="flex items-center justify-center mx-auto mt-4 mb-5">
-    <a class="px-8 py-2 text-sm tracking-wider bg-white border-2 border-gray-900 cursor-pointer md:text-base rounded-3xl hover:bg-gray-800 hover:text-white font-patua-one" href="{{ route('contact',[$post->destination_id,$post->slug,$post->subregion_id,$post->country_id]) }}">Start to plan my trip</a>
+    <a class="px-8 py-2 text-sm tracking-wider bg-white border-2 border-gray-900 cursor-pointer md:text-base rounded-3xl hover:bg-gray-800 hover:text-white font-patua-one" href="{{ route('contact',[$post->destination_id,$post->slug,$post->subregion_id,$post->country_id]) }}">Plan a trip here</a>
    </div>
    <div id="map" class="flex justify-center mx-auto" style="width: 100%;height:400px;">
     <script>
@@ -41,13 +41,13 @@
     </script>
     </div>
     <div class="inline-flex mb-2 social-share">
-    <p>Share this Post with: <span> {!! Share::currentPage('Share')->facebook()->twitter(); !!}</span></p>
+    <p>Share this Sight with: <span> {!! Share::currentPage('Share')->facebook()->twitter(); !!}</span></p>
 
     </div>
 </div>
 
 <div class="w-3/4 mx-auto mt-5 mb-5">
-    <h3 class="mt-6 text-2xl text-center font-patua-one">Posts relataded</h3>
+    <h3 class="mt-6 text-2xl text-center font-patua-one">Relataded sights</h3>
     <div class="owl-carousel owl-theme">
 
         @foreach ($posts as $post)

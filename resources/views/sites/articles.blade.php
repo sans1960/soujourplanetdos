@@ -18,14 +18,14 @@
     @foreach ($pag as $item)
         <div class="w-full mx-auto md:w-3/4">
             <div class="flex flex-col items-center justify-center max-w-screen-xl p-3 rounded-lg h-80" style="background-image:linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)),url('{{ asset('storage/pages/'.$item->image) }}');background-size:cover;">
-                <h1 class="text-center text-white text 2xl md:text-5xl font-patua-one">{{ $item->name }}</h1>
+                <h1 class="text-center text-white text-2xl md:text-5xl font-patua-one">{{ $item->name }}</h1>
             </div>
-            <div class="flex flex-row items-center justify-between ">
-                <p class="mt-5 font-open-sans">{!! \Carbon\Carbon::parse($item->date)->format('F j, Y') !!}</p>
-                <p class="mt-5 text-lg font-open-sans">{{ $item->tag->name }}</p>
+            <div class="mr-2 ml-2 md:mr-0 md:ml-0 flex flex-row items-center justify-between mb-4 border-b-4 border-gray-700 ">
+                <p class="mt-5 mb-4 font-open-sans">{!! \Carbon\Carbon::parse($item->date)->format('F j, Y') !!}</p>
+                <p class="mt-5 mb-4 font-open-sans">{{ $item->tag->name }}</p>
             </div>
 
-            <div class="w-full p-3 mx-auto text-xl tracking-wide md:w-3/4 font-open-sans indent-0">
+            <div class="w-full p-3 mx-auto text-xl tracking-wide md:w-3/4 font-open-sans indent-0 mt-5">
                 {!! $item->description !!}
             </div>
         </div>

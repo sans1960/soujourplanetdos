@@ -1,8 +1,8 @@
 @extends('layouts.front')
 @section('content')
 <div class="container mx-auto border-b-4 border-b-gray-400">
-    <div class="flex flex-row flex-wrap justify-around mt-5 text-xs md:text-sm lg:text-base font-open-sans ">
-        <a href="" class="m-2 font-bold">{{ $country->name }}</a>
+    <div class="flex flex-row flex-wrap justify-around mt-5  font-open-sans ">
+        <a href="" class="m-2 font-bold text-xl">{{ $country->name }}</a>
 
 
 
