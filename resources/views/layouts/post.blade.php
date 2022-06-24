@@ -5,7 +5,9 @@
         <meta name="viewport" content="width=device-width, initial-scale=1">
         <link rel="shortcut icon" href="{{ asset('img/index.ico') }}" type="image/x-icon">
         <title>Travel Blog</title>
-        <link rel="stylesheet" href="{{ asset('css/app.css') }}">
+        {{-- <link rel="stylesheet" href="{{ asset('css/app.css') }}"> --}}
+        <script src="https://cdn.tailwindcss.com"></script>
+        <link rel="stylesheet" href="{{ asset('css/styles.css') }}">
         <link rel="stylesheet" href="{{ asset('css/social.css') }}">
         <link rel="stylesheet" href="{{ asset('css/leaflet.css') }}">
 
@@ -17,7 +19,7 @@
         <script src="{{ asset('js/owl.carousel.min.js') }}"></script>
     </head>
     <body>
-        <nav class="flex items-center justify-around p-3 bg-gray-one">
+        <nav class="flex items-center justify-around p-3 bg-one">
             <div>
                 <a href="{{ route('sites') }}" class="text-white font-patua-one">Travel Blog</a>
             </div>
@@ -35,7 +37,7 @@
     </nav>
     @include('layouts.navbar',['destinations'=>$destinations=App\Models\Destination::all()])
       @yield('content')
-      <footer class="mt-5 text-xs bg-slate-800">
+      <footer class="mt-5 text-xs bg-one">
         <div class="flex flex-col items-center justify-between p-6 mt-5 text-white md:flex-row font-open-sans">
             <div class="flex flex-col items-center justify-start md:flex-row">
             <p>Copyright © 2021 Sojournplanet - All rights reserved -</p>

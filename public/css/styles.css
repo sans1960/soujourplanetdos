@@ -1,0 +1,11 @@
+@import url('https://fonts.googleapis.com/css2?family=Open+Sans&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Patua+One&display=swap');
+.font-open-sans{
+    font-family: 'Open Sans', sans-serif;
+}
+.font-patua-one{
+    font-family: 'Patua One', cursive;
+}
+.bg-one{
+    background-color: #161616;
+}

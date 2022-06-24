@@ -5,21 +5,23 @@
         <meta name="viewport" content="width=device-width, initial-scale=1">
         <link rel="shortcut icon" href="{{ asset('img/index.ico') }}" type="image/x-icon">
         <title>Blog</title>
-        <link rel="stylesheet" href="{{ asset('css/app.css') }}">
+        {{-- <link rel="stylesheet" href="{{ asset('css/app.css') }}"> --}}
+        <script src="https://cdn.tailwindcss.com"></script>
+        <link rel="stylesheet" href="{{ asset('css/styles.css') }}">
         <link rel="stylesheet" href="{{ asset('css/social.css') }}">
         <link rel="stylesheet" href="{{ asset('css/leaflet.css') }}">
         <link rel="stylesheet" href="{{ asset('css/easySelectStyle.css') }}">
         <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
     </head>
     <body>
-        <nav class="flex items-center justify-center p-3 bg-gray-800">
+        <nav class="flex items-center justify-center p-3 bg-one">
             <a href="{{route('index')}}">
                 <img src="{{ asset('img/ll.png') }}" class="" width="100" alt="">
             </a>
 
         </nav>
       @yield('content')
-      <footer class=" bg-slate-800">
+      <footer class=" bg-one">
         <div class="flex flex-col items-center justify-between p-6 text-white md:flex-row font-open-sans">
             <div class="flex flex-col items-center justify-start md:flex-row">
             <p>Copyright © 2021 Sojournplanet - All rights reserved -</p>
