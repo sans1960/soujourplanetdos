@@ -3,17 +3,21 @@
 
  <div class="w-full ">
        @foreach ($post as $item)
-            <div class="flex flex-col items-center justify-center text-4xl font-bold text-white h-80 font-patua-one" style="background-image: url('{{asset('storage/country/'.$item->country->head)}}');background-size:cover;background-repeat:no-repeat;background-position:center;">
-            <h1 class="mb-5 tracking-wider ">Planning your trip</h1>
-            {{-- <h1 class="mb-5 tracking-wider">{{$item->subregion->name}}</h1> --}}
-            <h1 class="mt-5 mb-5">By</h1>
-            <h1 class="mt-5 tracking-wider">{{$item->country->name}}</h1>
+            <div class="flex  items-center justify-center  h-80 " style="background-image: url('{{asset('storage/country/'.$item->country->head)}}');background-size:cover;background-repeat:no-repeat;background-position:center;">
+            <h1 class="text-xl md:text-2xl lg:text-3xl font-bold text-white font-patua-one ">Planning your trip by {{ $item->country->name }}</h1>
+
+
+
 
             </div>
         @endforeach
 
 <div class="container mx-auto">
-   <h1 class="mt-5 mb-5 text-lg text-center text-gray-500">Inquire about a tailor-made trip with us</h1>
+    @foreach ($post as $item)
+
+
+   <h1 class="mt-5 mb-5 text-lg text-center text-gray-500">Prepare a tailor-made trip with us visiting {{ $item->title }}</h1>
+    @endforeach
    <form action="{{ route('sendform') }}" method="post">
     <x-honeypot />
        @csrf
@@ -152,51 +156,63 @@
               </div>
 
             </div>
-            <h1 class="mt-4 mb-4 ml-4 text-2xl text-gray-500 md:ml-0">More info</h1>
+
+            <div class="grid grid-cols-1 gap-4 md:grid-cols-2">
+                <div class="flex flex-col justify-center items-center  md:justify-start md:items-start">
+                    <h1 class="mt-4 mb-4 ml-4 text-2xl text-gray-500 md:ml-0">Your interests</h1>
+                    @foreach ($post as $item)
+                    <div class="flex  mr-2 md:mr-0">
+                        <input type="checkbox" name="posts[]" id="" value="{{ $item->title }}" checked>
+                        <p class="ml-4 text-gray-500">{{ $item->title }}</p>
+                      </div>
+
+                    @endforeach
+                </div>
+                <div class="flex flex-col">
+
+                    <h1 class="mt-5 text-2xl text-center text-gray-500">More sites related</h1>
+                    <div class="flex flex-col justify-start w-full mt-5">
+
+                    @foreach ($items as $box)
+                    <div class="flex flex-row items-center justify-center mx-auto ">
+                        <input type="checkbox" name="posts[]" id="" value="{{ $box->title }}">
+                        <p class="ml-4 text-gray-500">{{ $box->title }}</p>
+                      </div>
+                    @endforeach
+
+                </div>
+                 </div>
+
+            </div>
+            <div class="grid grid-cols-1 gap-4 md:grid-cols-2">
+                <div class="flex flex-col">
+                    @foreach ($post as $item)
+                    <h1 class="mt-5 text-lg text-gray-500">Another countries of {{ $item->subregion->name }}</h1>
+                    @endforeach
+
+                    <div class="flex flex-row items-center justify-center w-full mt-5">
+                        <select name="countries[]" id="one" multiple="multiple">
+
+                            @foreach ($countries as $country)
+
+                            <option value="{{ $country->name }}">{{ $country->name }}</option>
+
+
+                        @endforeach
+                        </select>
+
+                    </div>
+
+                </div>
+            </div>
+            <h1 class="mt-4 ml-4 text-2xl text-gray-500 md:ml-0"> Another specificatons and sites</h1>
+            <p class="text-xs mt-4 mb-4">Please tell us about your wishes:</p>
             <div>
               <textarea class="w-full border-4 border-gray-400 appearance-none"  name="message" id="" cols="30" rows="10">
-                @foreach ($post as $item)
-                    I am interest for : {{ $item->title }}
-                @endforeach
+
 
               </textarea>
             </div>
-        <div class="grid grid-cols-1 gap-4 md:grid-cols-2">
-            <div class="flex flex-col">
-                @foreach ($post as $item)
-                <h1 class="mt-5 text-lg text-gray-500"> Countries of {{ $item->subregion->name }}</h1>
-                @endforeach
-
-                <div class="flex flex-row items-center justify-center w-full mt-5">
-                    <select name="countries[]" id="one" multiple="multiple">
-
-                        @foreach ($countries as $country)
-
-                        <option value="{{ $country->name }}">{{ $country->name }}</option>
-
-
-                    @endforeach
-                    </select>
-
-                </div>
-
-            </div>
-            <div class="flex flex-col">
-
-               <h1  class="mt-5 text-lg text-center text-gray-500">More sites related</h1>
-               <div class="flex flex-col justify-start w-full mt-5">
-
-               @foreach ($items as $box)
-               <div class="flex flex-row items-center justify-center mx-auto ">
-                   <input type="checkbox" name="posts[]" id="" value="{{ $box->title }}">
-                   <p class="ml-4 text-gray-500">{{ $box->title }}</p>
-                 </div>
-               @endforeach
-
-           </div>
-            </div>
-        </div>
-
 
 
             <div class="flex flex-col items-center justify-center w-full p-5 mt-5">
