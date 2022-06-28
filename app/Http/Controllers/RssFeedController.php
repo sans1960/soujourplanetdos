@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 use App\Models\Post;
+use App\Models\Page;
 
 class RssFeedController extends Controller
 {
@@ -54,6 +55,10 @@ class RssFeedController extends Controller
     public function rssGeneral(){
         $posts = Post::all()->sortByDesc('date');
         return response()->view('feed.general',compact('posts'))->header('Content-Type','application/xml');
+    }
+    public function rssAllPages(){
+        $pages = Page::all()->sortByDesc('date');
+        return response()->view('feed.allpages',compact('pages'))->header('Content-Type','application/xml');
     }
 
 

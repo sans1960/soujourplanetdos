@@ -46,6 +46,7 @@ Route::get('/feed/southeastasia', [RssFeedController::class,'rssSouthEastAsia'])
 Route::get('/feed/centralasia', [RssFeedController::class,'rssCentralAsia'])->name('feed.centralasia');
 Route::get('/feed/centralamerica', [RssFeedController::class,'rssCentralAmerica'])->name('feed.centralamerica');
 Route::get('/feed/general', [RssFeedController::class,'rssGeneral'])->name('feed.general');
+Route::get('/feed/allpages', [RssFeedController::class,'rssAllPages'])->name('feed.allpages');
 
 
 
