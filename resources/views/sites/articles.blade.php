@@ -1,4 +1,25 @@
 @extends('layouts.essential')
+@section('meta_title')
+    @foreach ($pag as $item)
+        {{ $item->name }}
+    @endforeach
+@endsection
+@section('meta_description')
+@foreach ($pag as $item)
+{!!  Str::limit(strip_tags($item->description),100,'...') !!}
+@endforeach
+
+@endsection
+@section('meta_url')
+@foreach ($pag as $item)
+{{ url('sites/pages/'.$item->slug) }}
+@endforeach
+@endsection
+@section('meta_image')
+@foreach ($pag as $item)
+{{ asset('public/storage/pages/'.$item->image) }}
+@endforeach
+@endsection
 @section('title')
 @foreach ($pag as $item)
     {{ $item->name }}

@@ -53,7 +53,7 @@ class PostController extends Controller
         $post->country_id = $request->country_id;
         $post->category_id = $request->category_id;
         $post->subregion_id = $request->subregion_id;
-        $post->extract = $request->extract;
+
         $post->body = $request->body;
         $post->date = $request->date;
         $post->save();

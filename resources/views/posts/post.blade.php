@@ -1,4 +1,16 @@
 @extends('layouts.post')
+@section('meta_title')
+    {{ $post->title }}
+@endsection
+@section('meta_description')
+   {!!  Str::limit(strip_tags($post->extract),100,'...') !!}
+@endsection
+@section('meta_url')
+    {{ url('post/'.$post->slug) }}
+@endsection
+@section('meta_image')
+    {{ asset('storage/photos/'.$post->photo->image) }}
+@endsection
 @section('content')
 
 <div class="flex flex-col w-full mt-5 ml-2 mr-2 border-b-4 lg:w-3/4 lg:mx-auto border-b-gray-900">

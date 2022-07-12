@@ -46,7 +46,8 @@ class PhotoController extends Controller
         $photo = new Photo([
             "caption" => $request->get('caption'),
             "image" => $request->image->hashName(),
-            "post_id"=>$request->get('post_id')
+            "post_id"=>$request->get('post_id'),
+
         ]);
         $photo->save(); // Finally, save the record.
         return redirect()->route('admin.photos.index')->with('info','Photo Created') ;
